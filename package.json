@@ -1,0 +1,24 @@
+{
+  "name": "group-expense-tracker",
+  "version": "1.0.0",
+  "description": "A simple AngularJS app to track group lunch expenses.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mesko89/group-expense-tracker.git"
+  },
+  "keywords": [
+    "angularjs",
+    "expense",
+    "tracker"
+  ],
+  "author": "Dejan Mesar",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Mesko89/group-expense-tracker/issues"
+  },
+  "homepage": "https://github.com/Mesko89/group-expense-tracker#readme"
+}
