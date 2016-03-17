@@ -3,16 +3,13 @@
     function PersonsService() {
         this.idMap = {};
         this.list = [];
-        ['Ben', 'Angela', 'Tom'].forEach(function (n, i) {
-            this.add({id: i, name: n});
-        }.bind(this));
     }
 
     PersonsService.prototype = {
         idMap: {},
         list: [],
         getById: function (id) {
-            return this.list[id];
+            return this.idMap[id];
         },
         getAll: function () {
             return this.list;
@@ -27,8 +24,11 @@
 
     angular.module('GroupExpenseTracker.services', [])
         .factory('personsService', function () {
-            // TODO: Inject local storage support
-            return new PersonsService();
+            var personsService = new PersonsService();
+            ['Ben', 'Angela', 'Tom'].forEach(function (n, i) {
+                personsService.add({id: i, name: n, balance: 0 });
+            });
+            return personsService;
         });
 
 })();
