@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]><html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]><html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--><html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]><html lang="en" ng-app="GroupExpenseTracker" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html lang="en" ng-app="GroupExpenseTracker" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html lang="en" ng-app="GroupExpenseTracker" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" ng-app="GroupExpenseTracker" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,11 +34,6 @@
             </button>
             <a class="navbar-brand" href="#">Group lunch expense tracker</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Help</a></li>
-            </ul>
-        </div>
     </div>
 </nav>
 
@@ -50,13 +45,12 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#/view1">View1</a></li>
-                <li><a href="#/view2">View2</a></li>
+                <li class="active"><a href="#/list">Payment list</a></li>
+                <li><a href="#/who_pays">Who pays next?</a></li>
+                <li><a href="#/add_payment">Add payment</a></li>
             </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
-        </div>
-        <div>Angular seed app: v<span app-version></span></div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view />
     </div>
 </div>
 
@@ -73,10 +67,8 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="app.js"></script>
-<script src="view1/view1.js"></script>
-<script src="view2/view2.js"></script>
-<script src="components/version/version.js"></script>
-<script src="components/version/version-directive.js"></script>
-<script src="components/version/interpolate-filter.js"></script>
+<script src="list/list.js"></script>
+<script src="who_pays/who_pays.js"></script>
+<script src="add_payment/add_payment.js"></script>
 </body>
 </html>
