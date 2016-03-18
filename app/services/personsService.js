@@ -26,7 +26,8 @@
         .factory('personsService', function () {
             var personsService = new PersonsService();
             ['Ben', 'Angela', 'Tom'].forEach(function (n, i) {
-                personsService.add({id: i, name: n, balance: 0 });
+                // TODO: Beware of test data!!!
+                personsService.add({id: i, name: n, balance: i*(-10) });
             });
             return personsService;
         });
