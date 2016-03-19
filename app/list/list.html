@@ -1,1 +1,17 @@
-<h2>Payment list</h2>
+    <h2>Payment list</h2>
+
+<p><a href="#/add_payment"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add payment</button></a></p>
+
+    <div class="alert alert-info" role="alert" ng-show="payments.length == 0">
+        You should click <b>Add payment</b> button to add a payment.
+    </div>
+
+    <p>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="payment in payments">
+                <b>{{payment.payerName}}</b> paid
+                <b>{{payment.total | currency}}</b> for:
+                {{payment.expenses | expensesToHtml : "{{personName}\} ({{value}\})"}}
+            </li>
+        </ul>
+    </p>

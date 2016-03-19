@@ -22,7 +22,7 @@
         }
     };
 
-    angular.module('GroupExpenseTracker.services', [])
+    angular.module('GroupExpenseTracker.personsService', [])
         .factory('personsService', function () {
             var personsService = new PersonsService();
             ['Ben', 'Angela', 'Tom'].forEach(function (n, i) {
