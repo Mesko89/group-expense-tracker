@@ -6,12 +6,10 @@
         You should click <b>Add payment</b> button to add a payment.
     </div>
 
-    <p>
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="payment in payments">
                 <b>{{payment.payerName}}</b> paid
                 <b>{{payment.total | currency}}</b> for:
-                {{payment.expenses | expensesToHtml : "{{personName}\} ({{value}\})"}}
+                {{payment.amounts | amountsToHtml : "{{personName}\} ({{value}\})"}}
             </li>
         </ul>
-    </p>

@@ -4,7 +4,7 @@
 angular.module('GroupExpenseTracker', [
   'ngRoute',
   'activeLinkClass',
-  'expensesToHtml',
+  'amountsToHtml',
   'GroupExpenseTracker.personsService',
   'GroupExpenseTracker.paymentService',
   'GroupExpenseTracker.list',

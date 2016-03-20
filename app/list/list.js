@@ -16,10 +16,10 @@ angular.module('GroupExpenseTracker.list', ['ngRoute'])
                 return {
                     payerName: payer.name,
                     total: payment.total,
-                    expenses: Object.keys(payment.expenses).map(function (personId) {
+                    amounts: Object.keys(payment.amounts).map(function (personId) {
                         return {
                             personName: personsService.getById(personId).name,
-                            value: payment.expenses[personId]
+                            value: payment.amounts[personId]
                         }
                     })
                 }
