@@ -4,39 +4,6 @@
 
 describe('my app', function() {
 
+  // todo: learn to use protractor
 
-  it('should automatically redirect to /list when location hash/fragment is empty', function() {
-    browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/list");
-  });
-
-
-  describe('view1', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/list');
-    });
-
-
-    it('should render list when user navigates to /list', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
-    });
-
-  });
-
-
-  describe('view2', function() {
-
-    beforeEach(function() {
-      browser.get('index.html#/who_pays');
-    });
-
-
-    it('should render who_pays when user navigates to /who_pays', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
-    });
-
-  });
 });

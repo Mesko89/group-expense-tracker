@@ -1,16 +1,16 @@
 'use strict';
 
-describe('GroupExpenseTracker.list module', function() {
+describe('GroupExpenseTracker.list module', function () {
 
-  beforeEach(module('GroupExpenseTracker.list'));
+    beforeEach(module('GroupExpenseTracker.list'));
 
-  describe('list controller', function(){
+    describe('list controller', function () {
 
-    it('should ....', inject(function($controller) {
-      //spec body
-      var listCtrl = $controller('ListCtrl');
-      expect(listCtrl).toBeDefined();
-    }));
+        it('should ....', inject(function ($controller) {
+            //spec body
+            var listCtrl = $controller('ListCtrl');
+            expect(listCtrl).toBeDefined();
+        }));
 
-  });
+    });
 });

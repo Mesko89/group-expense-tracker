@@ -10,7 +10,7 @@ angular.module('GroupExpenseTracker.list', ['ngRoute'])
     }])
 
     .controller('ListCtrl', function ($scope, personsService, paymentService) {
-        var payments = paymentService.getAll()
+        $scope.payments = paymentService.getAll()
             .map(function (payment) {
                 var payer = personsService.getById(payment.payerId);
                 return {
@@ -24,5 +24,4 @@ angular.module('GroupExpenseTracker.list', ['ngRoute'])
                     })
                 }
             });
-        $scope.payments = payments;
     });

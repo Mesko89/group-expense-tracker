@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     function PaymentService() {
         this.list = [];

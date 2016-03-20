@@ -1,8 +1,7 @@
-angular.module('activeLinkClass', []).
-directive('activeLinkClass', ['$location', function (location) {
+angular.module('activeLinkClass', []).directive('activeLinkClass', ['$location', function (location) {
     return {
         restrict: 'A',
-        link: function(scope, element, attrs) {
+        link: function (scope, element, attrs) {
             var clazz = attrs.activeLinkClass;
             var path = element.find('a').attr('href').substring(1);
             scope.location = location;

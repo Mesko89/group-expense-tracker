@@ -2,7 +2,8 @@
 
 <div class="dropdown">
     <div class="alert alert-danger" role="alert" ng-show="payerError">You should select who pays for the group.</div>
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
         {{payer ? payer.name : ''}}
         <span class="caret"></span>
     </button>
@@ -16,9 +17,11 @@
 <div class="alert alert-danger" role="alert" ng-show="total === 0 && triedSubmit">The total of current bill is 0.</div>
 <div ng-repeat="person in personAmounts">
     <div class="input-group col-lg-2">
-        <span class="input-group-addon person-expense-label" id="person-label-{{person.id}}"><label for="person-input-{{person.id}}"><b>{{person.name}}</b></label></span>
+        <span class="input-group-addon person-expense-label" id="person-label-{{person.id}}"><label
+                for="person-input-{{person.id}}"><b>{{person.name}}</b></label></span>
         <span class="input-group-addon">$</span>
-        <input type="number" class="form-control" min="0" id="person-input-{{person.id}}" ng-model="person.amount" ng-change="calculateTotal()" aria-describedby="person-label-{{person.id}}">
+        <input type="number" class="form-control" min="0" id="person-input-{{person.id}}" ng-model="person.amount"
+               ng-change="calculateTotal()" aria-describedby="person-label-{{person.id}}">
     </div>
 </div>
 

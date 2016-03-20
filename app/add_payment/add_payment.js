@@ -36,7 +36,7 @@ angular.module('GroupExpenseTracker.addPayment', ['ngRoute'])
                 return;
             }
             personsService.getById($scope.payer.id).balance += $scope.total;
-            paymentService.add($scope.payer, $scope.personAmounts.reduce(function(personExpenseValue, d) {
+            paymentService.add($scope.payer, $scope.personAmounts.reduce(function (personExpenseValue, d) {
                 personsService.getById(d.id).balance -= d.amount;
                 personExpenseValue[d.id] = d.amount;
                 return personExpenseValue;
