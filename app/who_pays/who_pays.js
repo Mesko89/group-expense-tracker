@@ -13,5 +13,6 @@ angular.module('GroupExpenseTracker.whoPays', ['ngRoute'])
     var persons = personsService.getAll();
     if (!persons.length) return; // Nothing to do with no person ...
     persons.sort(function (a, b) { return a.balance - b.balance });
-    $scope.person = persons[0].name;
+    $scope.person = persons[0];
+    $scope.persons = persons;
 }]);

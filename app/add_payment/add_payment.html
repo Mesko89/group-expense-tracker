@@ -7,14 +7,14 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li ng-repeat="person in personExpenses"><a ng-click="selectPayer(person)">{{person.name}}</a></li>
+        <li ng-repeat="person in personAmounts"><a ng-click="selectPayer(person)">{{person.name}}</a></li>
     </ul>
     <span ng-show="total > 0">paid <b>{{total | currency}}</b></span>
 </div>
 
 <h3>Enter lunch prices for each person</h3>
 <div class="alert alert-danger" role="alert" ng-show="total === 0 && triedSubmit">The total of current bill is 0.</div>
-<div ng-repeat="person in personExpenses">
+<div ng-repeat="person in personAmounts">
     <div class="input-group col-lg-2">
         <span class="input-group-addon person-expense-label" id="person-label-{{person.id}}"><label for="person-input-{{person.id}}"><b>{{person.name}}</b></label></span>
         <span class="input-group-addon">$</span>

@@ -22,21 +22,7 @@
     };
 
     angular.module('GroupExpenseTracker.paymentService', [])
-        .factory('paymentService', function (personsService) {
-            var persons = personsService.getAll();
-            var ps = new PaymentService();
-            var totalPayments = 5;
-            while (totalPayments--) {
-                ps.add(
-                    getRandomPerson(personsService),
-                    persons.reduce(function (map, person) {
-                        map[person.id] = getRandomLunchPriceForPerson();
-                        return map;
-                    }, {})
-                );
-            }
-            return ps;
-        });
+        .service('paymentService', PaymentService);
 
     function getRandomPerson(personsService) {
         var persons = personsService.getAll();

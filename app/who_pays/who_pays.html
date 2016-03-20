@@ -1,3 +1,3 @@
 <h2>Who should pay next?</h2>
 <p ng-hide="person">There is no person in the group.</p>
-<p ng-hide="!person"><b>{{person}}</b> should pay next lunch.</p>
+<p ng-hide="!person"><b>{{person.name}}</b> ({{person.balance | currency}}) has highest debt and should pay next.</p>

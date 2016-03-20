@@ -15,7 +15,7 @@ angular.module('GroupExpenseTracker.addPayment', ['ngRoute'])
         $scope.payer = null;
         $scope.total = 0;
 
-        $scope.personExpenses = personsService.getAll().map(function (person) {
+        $scope.personAmounts = personsService.getAll().map(function (person) {
             return {
                 id: person.id, name: person.name, amount: 0
             }
@@ -35,7 +35,9 @@ angular.module('GroupExpenseTracker.addPayment', ['ngRoute'])
             if ($scope.total === 0) {
                 return;
             }
-            paymentService.add($scope.payer, $scope.personExpenses.reduce(function(personExpenseValue, d) {
+            personsService.getById($scope.payer.id).balance += $scope.total;
+            paymentService.add($scope.payer, $scope.personAmounts.reduce(function(personExpenseValue, d) {
+                personsService.getById(d.id).balance -= d.amount;
                 personExpenseValue[d.id] = d.amount;
                 return personExpenseValue;
             }, {}));
@@ -44,7 +46,7 @@ angular.module('GroupExpenseTracker.addPayment', ['ngRoute'])
 
         $scope.calculateTotal = function () {
             if ($scope.total !== 0) $scope.triedSubmit = false;
-            $scope.total = $scope.personExpenses.reduce(function (total, personAmount) {
+            $scope.total = $scope.personAmounts.reduce(function (total, personAmount) {
                 if (!personAmount.amount) personAmount.amount = 0;
                 personAmount.amount = Math.abs(personAmount.amount);
                 return total + personAmount.amount;
