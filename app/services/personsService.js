@@ -19,6 +19,10 @@
 
             this.idMap[person.id] = person;
             this.list.push(person);
+            this.list.sort(function(a, b) {
+                return a.name < b.name ? -1 :
+                    a.name > b.name ? 1 : 0;
+            })
         }
     };
 

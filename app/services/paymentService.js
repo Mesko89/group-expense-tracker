@@ -9,14 +9,14 @@
         getAll: function () {
             return this.list;
         },
-        add: function (payer, expensesPerPerson) {
-            var total = Object.keys(expensesPerPerson).reduce(function (total, personId) {
-                return total + expensesPerPerson[personId];
+        add: function (payer, amountsPerPerson) {
+            var total = Object.keys(amountsPerPerson).reduce(function (total, personId) {
+                return total + amountsPerPerson[personId];
             }, 0);
-            this.list.push({
+            this.list.unshift({
                 payerId: payer.id,
                 total: total,
-                expenses: expensesPerPerson
+                expenses: amountsPerPerson
             });
         }
     };

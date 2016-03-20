@@ -103,3 +103,11 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.person-expense-label {
+  width: 100px;
+}
+
+.margin-top {
+  margin-top:16px;
+}
